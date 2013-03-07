@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">ailk.oa.item.**
+ailk.oa.tools.**
+ailk.oa.web.**
+arithmetic.**
+asd.**
+cn.itcast.day2.**
+cn.itcast.heima2.**
+com.generic.**
+com.greysh.aop.factory.**
+com.greysh.aop.proxy.**
+com.greysh.aop.service.**
+com.greysh.aop.test.**
+com.java.aop.**
+j.ee.ejb.aop.**
+j.jdbc.dao.impl.**
+j.jdbc.db.common.**
+j.jdbc.demo.**
+j.jdbc.domain.**
+j.jdbc.service.**
+j.jdbc.xa.**
+j.mail.**
+j.reflect.**
+j.se.aop.**
+j.se.base.**
+j.se.collection.**
+j.se.concurrency.aotmic.**
+j.se.concurrency.collections.**
+j.se.concurrency.executor.**
+j.se.concurrency.locks.**
+j.se.concurrency.tool.**
+j.se.dynamic.proxy.**
+j.se.jdbc.**
+j.se.jmx.**
+j.se.other.**
+j.se.reflect.**
+j.se.rmi.**
+j.se.systeminfo.**
+j.se.thread.**
+j.sort.**
+j.sqlite.**
+j.syn.**
+queue.test.**
+read.**
+test.**
+threaddemo.test.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">ailk.oa.item.*,
+ailk.oa.tools.*,
+ailk.oa.web.*,
+arithmetic.*,
+asd.*,
+cn.itcast.day2.*,
+cn.itcast.heima2.*,
+com.generic.*,
+com.greysh.aop.factory.*,
+com.greysh.aop.proxy.*,
+com.greysh.aop.service.*,
+com.greysh.aop.test.*,
+com.java.aop.*,
+j.ee.ejb.aop.*,
+j.jdbc.dao.impl.*,
+j.jdbc.db.common.*,
+j.jdbc.demo.*,
+j.jdbc.domain.*,
+j.jdbc.service.*,
+j.jdbc.xa.*,
+j.mail.*,
+j.reflect.*,
+j.se.aop.*,
+j.se.base.*,
+j.se.collection.*,
+j.se.concurrency.aotmic.*,
+j.se.concurrency.collections.*,
+j.se.concurrency.executor.*,
+j.se.concurrency.locks.*,
+j.se.concurrency.tool.*,
+j.se.dynamic.proxy.*,
+j.se.jdbc.*,
+j.se.jmx.*,
+j.se.other.*,
+j.se.reflect.*,
+j.se.rmi.*,
+j.se.systeminfo.*,
+j.se.thread.*,
+j.sort.*,
+j.sqlite.*,
+j.syn.*,
+queue.test.*,
+read.*,
+test.*,
+threaddemo.test.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">1</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+</properties>
