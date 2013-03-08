@@ -9,13 +9,20 @@
 	<bean id="systemInfo" class="com.taobao.taokeeper.common.SystemInfo">
 		<property name="envName" value="${systemInfo.envName}" />
 	</bean>
-	
+	 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+         <property name="locations">
+             <list>
+                 <value>classpath:taokeeper-monitor-config.properties</value>
+             </list>
+         </property>
+     </bean>
+     	
 	<!-- 系统配置 -->
 	<bean id="systemConstant" class="com.taobao.taokeeper.common.constant.SystemConstant">
 		<property name="dataStoreBasePath" value="${SystemConstent.dataStoreBasePath}" /> <!-- 状态信息存储，防止因为数据库挂造成的影响 -->
 		<property name="userNameOfSSH" value="${userNameOfSSH}" /> <!-- ZK服务器用户名与密码 -->
 		<property name="passwordOfSSH" value="${passwordOfSSH}" />
-		<property name="configOfMsgCenter" value="${configOfMsgCenter}" />
+		<!--<property name="configOfMsgCenter" value="${configOfMsgCenter}" />-->
 	</bean>
 
 	<bean id="dataSourceManager" class="common.toolkit.java.util.db.DbcpUtil">
@@ -29,10 +36,8 @@
 		<property name="maxWait" value="${dbcp.maxWait}" />
 	</bean>
 
-
 	<!-- Service -->
 	<bean id="reportService" class="com.taobao.taokeeper.monitor.service.impl.ReportServiceImpl" />
-
 	<bean id="zooKeeperClusterDAO" class="com.taobao.taokeeper.dao.impl.ZooKeeperClusterDAOImpl" />
 	<bean id="alarmSettingsDAO" class="com.taobao.taokeeper.dao.impl.AlarmSettingsDAOImpl" />
 	<bean id="taoKeeperSettingsDAO" class="com.taobao.taokeeper.dao.impl.SettingsDAOImpl" />
