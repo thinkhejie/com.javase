@@ -113,5 +113,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/JavaLib/dbdriver/MYSQL/mysql-connector-java-5.1.3-rc-bin.jar"/>
 	<classpathentry kind="lib" path="C:/common-toolkit-0.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/JavaLib/dbdriver/Oracle/ojdbc6.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
