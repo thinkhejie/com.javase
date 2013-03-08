@@ -12,6 +12,8 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.Session;
 import ch.ethz.ssh2.StreamGobbler;
@@ -52,7 +54,6 @@ public class SSHUtil {
 	 * @since 1.0.0
 	 */
 	public static HostPerformanceEntity getHostPerformance(String ip, int port, String userName, String password) throws SSHException {
-
 		if (StringUtil.isBlank(ip)) {
 			try {
 				throw new IllegalParamException("Param ip is empty!");
@@ -153,10 +154,19 @@ public class SSHUtil {
 					if (StringUtil.isBlank(totalMem, freeMem, buffersMem, cachedMem))
 						throw new Exception("Error when get system performance of ip: " + conn.getHostname() + ", can't get totalMem, freeMem, buffersMem or cachedMem");
 
-					Double totalMemDouble = Double.parseDouble(totalMem);
-					Double freeMemDouble = Double.parseDouble(freeMem);
-					Double buffersMemDouble = Double.parseDouble(buffersMem);
-					Double cachedMemDouble = Double.parseDouble(cachedMem);
+					Double totalMemDouble = 0d, freeMemDouble = 0d, buffersMemDouble = 0d, cachedMemDouble = 0d;
+					if (StringUtils.isNotBlank(totalMem)) {
+						totalMemDouble = Double.parseDouble(StringUtils.substring(totalMem, 0, totalMem.length() - 1));
+					}
+					if (StringUtils.isNotBlank(freeMem)) {
+						freeMemDouble = Double.parseDouble(StringUtils.substring(freeMem, 0, freeMem.length() - 1));
+					}
+					if (StringUtils.isNotBlank(buffersMem)) {
+						buffersMemDouble = Double.parseDouble(StringUtils.substring(buffersMem, 0, buffersMem.length() - 1));
+					}
+					if (StringUtils.isNotBlank(cachedMem)) {
+						cachedMemDouble = Double.parseDouble(StringUtils.substring(cachedMem, 0, cachedMem.length() - 1));
+					}
 
 					Double memoryUsage = 1 - ((freeMemDouble + buffersMemDouble + cachedMemDouble) / totalMemDouble);
 					systemPerformanceEntity.setMemoryUsage(memoryUsage * 100 + PERCENT);
