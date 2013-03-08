@@ -53,9 +53,9 @@ public class ZKServerPerformanceCollector implements Runnable {
 			HostPerformanceEntity hostPerformanceEntity = SSHUtil.getHostPerformance(ip, userNameOfSSH, passwordOfSSH);
 			sendAlarm(alarmSettings, hostPerformanceEntity, zookeeperCluster.getClusterName());
 			GlobalInstance.putHostPerformanceEntity(ip, hostPerformanceEntity);
-			LOG.info("HostPerformanceEntity collect of #" + zookeeperCluster.getClusterName() + "-" + ip + " ：" + hostPerformanceEntity);
+			LOG.debug("HostPerformanceEntity collect of #" + zookeeperCluster.getClusterName() + "-" + ip + " ：" + hostPerformanceEntity);
 		} catch (SSHException e) {
-			LOG.warn("HostPerformanceEntity collect of " + ip + " ：" + e.getMessage());
+			LOG.error("HostPerformanceEntity collect of " + ip + " ：" + e.getMessage());
 		} catch (Throwable exception) {
 			LOG.error("程序出错: " + exception.getMessage());
 			exception.printStackTrace();
