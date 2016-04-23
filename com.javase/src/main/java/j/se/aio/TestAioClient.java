@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.charset.CharacterCodingException;
+import java.util.concurrent.ExecutionException;
 
 import lion.netio.AsyncIOClient;
 import lion.netio.ServerFactory;
@@ -27,7 +28,7 @@ public class TestAioClient {
 
      */
     @org.junit.Test
-    public void testClientRun() throws IOException {
+    public void testClientRun() throws IOException, ExecutionException {
         ServerFactory factory = new ServerFactory();
         AsyncIOClient aoiClientConnector = factory.createClientAoiService();
         AsynchronousSocketChannel channel = aoiClientConnector.connect("127.0.0.1", 9008);

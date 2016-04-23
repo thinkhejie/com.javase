@@ -30,7 +30,7 @@ import javax.swing.JTextField;
 
 public class AioTcpClient {
     public static JTextField                                           jt      = new JTextField();
-    public static ConcurrentHashMap<String, AsynchronousSocketChannel> sockets = new ConcurrentHashMap<>();
+    public static ConcurrentHashMap<String, AsynchronousSocketChannel> sockets = new ConcurrentHashMap<String, AsynchronousSocketChannel>();
     static AioTcpClient                                                me;
 
     private AsynchronousChannelGroup                                   asyncChannelGroup;

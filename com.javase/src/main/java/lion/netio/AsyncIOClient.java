@@ -35,8 +35,14 @@ public class AsyncIOClient implements ConnectionHolder {
 			logger.info("successfully connect to {}:{}", ip, port);
 			connections.add(channel);
 			return channel;
-		} catch (IOException | InterruptedException | ExecutionException e) {
+		} catch (IOException e) {
 			logger.error("", e);
+			return null;
+		} catch (InterruptedException ex) {
+			logger.error("", ex);
+			return null;
+		} catch (Exception ex) {
+			logger.error("", ex);
 			return null;
 		}
 	}
