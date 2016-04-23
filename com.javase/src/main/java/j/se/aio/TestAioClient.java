@@ -8,11 +8,11 @@ import java.nio.channels.CompletionHandler;
 import java.nio.charset.CharacterCodingException;
 import java.util.concurrent.ExecutionException;
 
-import lion.netio.AsyncIOClient;
-import lion.netio.ServerFactory;
-import lion.netio.SocketChannelWrap;
-import lion.netio.SocketReader;
-import lion.netio.codec.LenthFieldDecoder;
+import j.se.io.aio.AsyncIOClient;
+import j.se.io.aio.ServerFactory;
+import j.se.io.aio.SocketChannelWrap;
+import j.se.io.aio.SocketReader;
+import j.se.io.aio.codec.LenthFieldDecoder;
 
 public class TestAioClient {
     /*
