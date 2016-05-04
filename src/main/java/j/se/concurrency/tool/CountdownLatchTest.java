@@ -6,6 +6,17 @@ import java.util.concurrent.Executors;
 
 /*
  * 计数器
+ * CountDownLatch是一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
+    // 使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
+	void await()
+	// 使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断或超出了指定的等待时间。
+	boolean await(long timeout, TimeUnit unit)
+	// 递减锁存器的计数，如果计数到达零，则释放所有等待的线程。
+	void countDown()
+	// 返回当前计数。
+	long getCount()
+	// 返回标识此锁存器及其状态的字符串。
+	String toString()
  */
 public class CountdownLatchTest {
 

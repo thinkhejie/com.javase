@@ -1,10 +1,10 @@
-package j.reflect;
-
-import j.reflect.Entity;
-import j.reflect.RefelctHelper;
+package j.se.reflect;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import j.se.reflect.Entity;
+import j.se.reflect.RefelctHelper;
 
 
 public class RefelctHelperTest {

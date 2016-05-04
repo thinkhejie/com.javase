@@ -1,4 +1,4 @@
-package j.reflect;
+package j.se.reflect;
 
 import java.io.InputStream;
 import java.util.Collection;

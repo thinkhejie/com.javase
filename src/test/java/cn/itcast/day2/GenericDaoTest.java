@@ -2,6 +2,8 @@ package cn.itcast.day2;
 
 import org.junit.Test;
 
+import j.se.base.GenericDao;
+
 public class GenericDaoTest {
 	@Test
 	public void test() {

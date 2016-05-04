@@ -1,4 +1,4 @@
-package j.reflect;
+package j.se.reflect;
 
 public abstract class WeekDay1 {
 	private WeekDay1() {

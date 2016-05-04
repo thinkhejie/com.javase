@@ -1,9 +1,10 @@
-package j.reflect;
+package j.se.reflect;
 
 //import static java.lang.Math.max;
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
-import cn.itcast.day2.AnnotationTest;
+
+import j.se.base.AnnotationTest;
 
 public class StaticImport {
 
