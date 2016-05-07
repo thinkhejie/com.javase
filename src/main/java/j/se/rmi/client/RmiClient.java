@@ -17,7 +17,6 @@ public class RmiClient {
 
 	@Test
 	public void main0() throws Exception {
-		//锟斤拷RMI锟斤拷锟斤拷注锟斤拷锟斤拷胁锟斤拷锟斤拷锟斤拷为RHello锟侥讹拷锟襟，诧拷锟斤拷锟斤拷锟斤拷锟较的凤拷锟斤拷
 		//IHello rhello = (IHello) Naming.lookup("rmi://localhost:8888/hejie");
 		System.out.println(rhello.helloWorld());
 		System.out.println(rhello.sayHelloToSomeBody("112333"));
