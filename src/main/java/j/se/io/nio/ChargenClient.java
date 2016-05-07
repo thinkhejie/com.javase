@@ -10,14 +10,15 @@ import java.nio.channels.WritableByteChannel;
 
 public class ChargenClient {
 	public static int DEFAULT_PORT = 8000;
-
+	
+	static String requestData = "Actions speak louder than words!";
+	
 	public static void main(String[] args) {
 		int port = DEFAULT_PORT;
 		try {
 			SocketAddress address = new InetSocketAddress("localhost", port);
 			SocketChannel client = SocketChannel.open(address);
-			ByteBuffer buffer = ByteBuffer.allocate(74);
-			WritableByteChannel out = Channels.newChannel(System.out);
+			client.write(ByteBuffer.wrap(requestData.getBytes()));
 			// 通道会从Socket读取数据，填充到缓冲区，返回成功读取并存储在缓冲区的字节数  
 			// 设置为非阻塞时，当没有字节返回时会立即返回0，  
 			// 此时程序应写成:  
@@ -28,9 +29,11 @@ public class ChargenClient {
 			//	          buffer.flip();   
 			//	          out.write(buffer);  
 			//	          buffer.clear();  
-			//	        } else if (n == -1)  
+			//	        } else if (n == -1)
 			//	          break; // 服务器故障了  
 			//	      }  
+			ByteBuffer buffer = ByteBuffer.allocate(74);
+			WritableByteChannel out = Channels.newChannel(System.out);
 			while (client.read(buffer) != -1) {
 				buffer.flip(); // 回绕 limit = position, position = 0  
 				out.write(buffer);

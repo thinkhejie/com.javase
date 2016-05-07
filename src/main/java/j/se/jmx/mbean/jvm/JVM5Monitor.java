@@ -20,13 +20,11 @@ public class JVM5Monitor implements JVM5MonitorMBean {
 
 	@Override
 	public String getAllThreadInfo() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getMemoryInfo() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
