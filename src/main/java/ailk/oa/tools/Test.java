@@ -11,8 +11,6 @@ import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 
-import ailk.oa.item.StaffInfo;
-
 public class Test {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws Exception {
@@ -57,11 +55,8 @@ public class Test {
 				client.executeMethod(postMethod);
 				String resultPage = postMethod.getResponseBodyAsString();
 				System.out.println(resultPage);
-				ArrayList<StaffInfo> infos = new ContactsPageParse().getStaffInfoViaPage(postMethod.getResponseBodyAsStream());
+				postMethod.getResponseBodyAsStream();
 				postMethod.releaseConnection();// release any connection resources used by the method
-				for (StaffInfo paramStaffInfo : infos) {
-					//new SqliteHelper().insert(conn, paramStaffInfo);
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

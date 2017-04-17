@@ -1,4 +1,4 @@
-package asd;
+package j.se.con;
 
 import java.util.HashMap;
 

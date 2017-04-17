@@ -1,4 +1,4 @@
-package asd;
+package j.se.con;
 
 public class Son extends Dady {
 	public int a = 10;
