@@ -10,7 +10,6 @@ public class MultiThreadShareData {
 		new Thread(new MyRunnable1(data2)).start();
 		new Thread(new MyRunnable2(data2)).start();
 
-		@SuppressWarnings("hiding")
 		final ShareData1 data1 = new ShareData1();
 		new Thread(new Runnable() {
 			@Override
@@ -62,7 +61,6 @@ class ShareData1 /*implements Runnable*/{
 	/*		private int count = 100;
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				while(true){
 					count--;
 				}
