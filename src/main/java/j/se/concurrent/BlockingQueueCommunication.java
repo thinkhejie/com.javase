@@ -10,7 +10,6 @@ public class BlockingQueueCommunication {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
 		final Business business = new Business();
 		new Thread(new Runnable() {
 
@@ -41,7 +40,6 @@ public class BlockingQueueCommunication {
 				System.out.println("xxxxxdfsdsafdsa");
 				queue2.put(1);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -50,7 +48,6 @@ public class BlockingQueueCommunication {
 			try {
 				queue1.put(1);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			for (int j = 1; j <= 10; j++) {
@@ -59,7 +56,6 @@ public class BlockingQueueCommunication {
 			try {
 				queue2.take();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -68,7 +64,6 @@ public class BlockingQueueCommunication {
 			try {
 				queue2.put(1);
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			for (int j = 1; j <= 100; j++) {
@@ -77,7 +72,6 @@ public class BlockingQueueCommunication {
 			try {
 				queue1.take();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
