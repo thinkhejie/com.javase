@@ -8,6 +8,10 @@ import java.nio.channels.SocketChannel;
 
 public class ServerHandler implements Handler {
 
+	/**
+	 * (non-Javadoc)
+	 * @see j.se.io.nio.handler.Handler#handleAccept(java.nio.channels.SelectionKey)
+	 */
 	@Override
 	public void handleAccept(SelectionKey key) throws IOException {
 		ServerSocketChannel serverSocketChannel = (ServerSocketChannel) key.channel();
@@ -15,16 +19,12 @@ public class ServerHandler implements Handler {
 		System.out.println("Server: accept client socket " + socketChannel);
 		socketChannel.configureBlocking(false);
 		socketChannel.register(key.selector(), SelectionKey.OP_READ);
-		/*
-		SelectionKey key2 = socketChannel.register(key.selector(), SelectionKey.OP_WRITE);
-		socketChannel.configureBlocking(false);	
 		ByteBuffer buffer = ByteBuffer.allocate(74);
 		buffer.put("hello world".getBytes());
 		buffer.put((byte) '\r');
 		buffer.put((byte) '\n');
 		buffer.flip();
-		key2.attach(buffer);
-		*/
+		socketChannel.write(buffer);
 	}
 
 	@Override
