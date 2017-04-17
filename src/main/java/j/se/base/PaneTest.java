@@ -1,4 +1,4 @@
-package com.generic;
+package j.se.base;
 
 import org.junit.After;
 import org.junit.Before;
