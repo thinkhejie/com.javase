@@ -1,4 +1,4 @@
-package com.chat.server;
+package j.se.io.nio.chat.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -48,7 +48,6 @@ public class ChatServer implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
@@ -94,7 +93,8 @@ public class ChatServer implements Runnable {
 			sb.append(new String(buffer.array(), 0, count));
 		}
 		String str = sb.toString();
-		if (str.indexOf("open_") != -1) {//客户端连接服务器
+		if (str.indexOf("open_") != -1) {
+			// 客户端连接服务器
 			String name = str.substring(5);
 			printInfo(name + " online");
 			userNames.add(name);
@@ -106,7 +106,8 @@ public class ChatServer implements Runnable {
 					selKey.interestOps(selKey.interestOps() | SelectionKey.OP_WRITE);
 				}
 			}
-		} else if (str.indexOf("exit_") != -1) {// 客户端发送退出命令
+		} else if (str.indexOf("exit_") != -1) {
+			// 客户端发送退出命令
 			String userName = str.substring(5);
 			userNames.remove(userName);
 			key.attach("close");
@@ -120,10 +121,11 @@ public class ChatServer implements Runnable {
 				}
 			}
 			printInfo(userName + " offline");
-		} else {// 读取客户端消息
+		} else {
+			// 读取客户端消息
 			String uname = str.substring(0, str.indexOf("^"));
 			String msg = str.substring(str.indexOf("^") + 1);
-			printInfo("("+uname+")说：" + msg);
+			printInfo("(" + uname + ")说：" + msg);
 			String dateTime = sdf.format(new Date());
 			String smsg = uname + " " + dateTime + "\n  " + msg + "\n";
 			Iterator<SelectionKey> iter = selector.selectedKeys().iterator();
@@ -146,7 +148,7 @@ public class ChatServer implements Runnable {
 			channel.socket().close();
 			channel.close();
 			return;
-		}else {
+		} else {
 			channel.write(ByteBuffer.wrap(obj.toString().getBytes()));
 		}
 		key.interestOps(SelectionKey.OP_READ);

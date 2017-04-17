@@ -11,7 +11,7 @@ import java.util.Set;
 
 import j.se.io.nio.handler.ServerHandler;
 
-public class ChargenServer2 {
+public class ChargenServer {
 
 	public static int DEFAULT_PORT = 8000;
 

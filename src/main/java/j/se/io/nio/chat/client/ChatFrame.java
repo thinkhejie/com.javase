@@ -1,4 +1,4 @@
-package com.chat.client;
+package j.se.io.nio.chat.client;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +21,7 @@ public class ChatFrame {
 	private JTextArea readContext = new JTextArea(18, 30);// 显示消息文本框
 	private JTextArea writeContext = new JTextArea(6, 30);// 发送消息文本框
 
-	private DefaultListModel modle = new DefaultListModel();// 用户列表模型
+	private DefaultListModel<String> modle = new DefaultListModel<String>();// 用户列表模型
 	private JList list = new JList(modle);// 用户列表
 
 	private JButton btnSend = new JButton("发送");// 发送消息按钮

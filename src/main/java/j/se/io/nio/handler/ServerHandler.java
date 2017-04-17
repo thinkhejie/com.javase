@@ -27,6 +27,10 @@ public class ServerHandler implements Handler {
 		socketChannel.write(buffer);
 	}
 
+	/**
+	 * (non-Javadoc)
+	 * @see j.se.io.nio.handler.Handler#handleRead(java.nio.channels.SelectionKey)
+	 */
 	@Override
 	public void handleRead(SelectionKey key) throws IOException {
 		ByteBuffer byteBuffer = ByteBuffer.allocate(512);
@@ -45,6 +49,10 @@ public class ServerHandler implements Handler {
 		socketChannel.close();
 	}
 
+	/**
+	 * (non-Javadoc)
+	 * @see j.se.io.nio.handler.Handler#handleWrite(java.nio.channels.SelectionKey)
+	 */
 	@Override
 	public void handleWrite(SelectionKey key) throws IOException {
 		ByteBuffer byteBuffer = (ByteBuffer) key.attachment();

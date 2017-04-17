@@ -1,4 +1,4 @@
-package com.chat.client;
+package j.se.io.nio.chat.client;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
