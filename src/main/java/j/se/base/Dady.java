@@ -1,4 +1,4 @@
-package j.se.con;
+package j.se.base;
 
 /**
  * 

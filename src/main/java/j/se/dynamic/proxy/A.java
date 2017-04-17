@@ -1,4 +1,4 @@
-package j.se.systeminfo;
+package j.se.dynamic.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

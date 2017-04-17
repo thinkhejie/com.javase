@@ -1,4 +1,4 @@
-package j.se.con;
+package j.se.base;
 
 public class Son extends Dady {
 	public int a = 10;
