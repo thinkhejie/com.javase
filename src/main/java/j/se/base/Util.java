@@ -1,6 +1,6 @@
 package j.se.base;
 
-import j.jdbc.db.common.ITEST;
+import j.se.jdbc.db.common.ITEST;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

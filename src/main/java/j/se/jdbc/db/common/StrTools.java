@@ -1,4 +1,4 @@
-package j.jdbc.db.common;
+package j.se.jdbc.db.common;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
